@@ -4,21 +4,25 @@ author: "Team 05"
 format: dashboard
 ---
 
-## Row {height=50%}
+## Row {height="50%"}
 
 ### Column {.tabset}
 
 ```{python}
 #| title: Chart 1
+
+
+
 ```
 
 ### Column {.tabset}
+
 
 ```{python}
 #| title: Chart 2
 ```
 
-## Row {height=50%}
+## Row {height="50%"}
 
 ### Column {.tabset}
 
