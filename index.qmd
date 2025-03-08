@@ -4,12 +4,12 @@ author: "Team 05"
 format: html
 ---
 
-# We are looking at blah blah blah
+# We are looking at blah we can change.
 
-lorem ipsum statements.
+lorem ipsum statements about the project.
 
 |  |  |  |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 |  | ![](photo/After/2024-09-30-00_00_2024-09-30-23_59_Sentinel-2_L2A_NDVI.jpg) | ![](photo/After/2024-09-29-00_00_2024-09-29-23_59_Sentinel-3_OLCI_L2_Land_OTCI.jpg) |
 |  | ![](photo/b4/2024-09-03-00_00_2024-09-03-23_59_Sentinel-2_L2A_NDVI.jpg) | ![](photo/b4/2024-09-12-00_00_2024-09-12-23_59_Sentinel-3_OLCI_L2_Land_Custom_script.jpg) |
 |  | here is the ratio | another ratio 3 |
