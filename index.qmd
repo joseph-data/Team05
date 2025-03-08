@@ -1,35 +1,17 @@
 ---
 title: "Wild Fires"
 author: "Team 05"
-format: dashboard
+format: html
 ---
 
-## Row {height="50%"}
+# We are looking at blah blah blah
 
-### Column {.tabset}
+lorem ipsum statements.
 
-```{python}
-#| title: Chart 1
+|  |  |  |
+|----|----|----|
+|  | ![](photo/After/2024-09-30-00_00_2024-09-30-23_59_Sentinel-2_L2A_NDVI.jpg) | ![](photo/After/2024-09-29-00_00_2024-09-29-23_59_Sentinel-3_OLCI_L2_Land_OTCI.jpg) |
+|  | ![](photo/b4/2024-09-03-00_00_2024-09-03-23_59_Sentinel-2_L2A_NDVI.jpg) | ![](photo/b4/2024-09-12-00_00_2024-09-12-23_59_Sentinel-3_OLCI_L2_Land_Custom_script.jpg) |
+|  | here is the ratio | another ratio 3 |
 
-```
-
-### Column {.tabset}
-
-
-```{python}
-#| title: Chart 2
-```
-
-## Row {height="50%"}
-
-### Column {.tabset}
-
-```{python}
-#| title: Chart 3
-```
-
-### Column {.tabset}
-
-```{python}
-#| title: Chart 4
-```
+another lorem ipsum statements.
