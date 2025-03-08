@@ -4,18 +4,20 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "ew---\n",
+        "---\n",
         "title: \"Wild Fires\"\n",
         "author: \"Team 05\"\n",
         "format: dashboard\n",
-        "\n",
         "---\n",
         "\n",
+        "\n",
+        "\n",
+        "\n",
         "## Row {height=50%}\n",
         "\n",
         "### Column {.tabset}\n"
       ],
-      "id": "a5307dfe"
+      "id": "ec5cfe01"
     },
     {
       "cell_type": "markdown",
@@ -23,7 +25,7 @@
       "source": [
         "### Column {.tabset}\n"
       ],
-      "id": "5edb3c8d"
+      "id": "e4774dae"
     },
     {
       "cell_type": "markdown",
@@ -33,7 +35,7 @@
         "\n",
         "### Column {.tabset}\n"
       ],
-      "id": "f7985c21"
+      "id": "a904fab3"
     },
     {
       "cell_type": "markdown",
@@ -41,7 +43,7 @@
       "source": [
         "### Column {.tabset}\n"
       ],
-      "id": "b7e02fd2"
+      "id": "536ed2d2"
     }
   ],
   "metadata": {

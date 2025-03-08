@@ -1,4 +1,4 @@
-ew---
+---
 title: "Wild Fires"
 author: "Team 05"
 format: dashboard
