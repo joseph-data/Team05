@@ -17,16 +17,16 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # Add Python setup and dependencies here
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11.9'
+          python-version: '3.11'
           cache: 'pip'
 
       - name: Install Python dependencies
-      - run: pip install jupyter
-      - run: pip install -r requirements.txt
+        run: |
+          pip install --upgrade pip
+          pip install jupyter nbformat ipykernel numpy requests plotly pillow
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
