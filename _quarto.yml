@@ -2,13 +2,18 @@ project:
   type: website
 
 website:
-  title: "Team05"
+  title: "Team 05 Örebro University"
   navbar:
     left:
       - href: index.qmd
         text: "Project Description"
       - href: about.qmd
-        text: "Dashboard"
+        text: "Portugal"
+      - href: greece.qmd
+        text: "Greece"
+      - href: spain.qmd
+        text: "Spain"
+
 
 format:
   html:

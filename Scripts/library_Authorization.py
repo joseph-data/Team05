@@ -11,7 +11,10 @@ import folium
 import fiona
 
 from IPython.display import display
+
+
 import pandas as pd
+import plotly.express as px
 
 # #| title: Satellite Image Retrieval
 # # Function to get access token
