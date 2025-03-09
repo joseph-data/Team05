@@ -1,18 +1,18 @@
---- 
+---
 format:
   dashboard:
     nav-buttons:
       - icon: github
         href: https://github.com/
-    theme: united
+    theme: lux
 ---
 
-## Column {width=60%}
+## Column {width="60%"}
 
 ```{python}
 ```
 
-## Column {width=40%}
+## Column {width="40%"}
 
 ```{python}
 ```
