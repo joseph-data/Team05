@@ -1,8 +1,10 @@
 ---
-title: "Rapid thorough deforestation impact on Chlorophyll average concentration"
 author: "Team 05 - Örebro University"
 format: html
 theme: lux
+page-layout: full
+viewer: true
+scroll-smooth: true
 ---
 
 # Description
@@ -15,7 +17,6 @@ The indicators we calculate are ratios of both the before and after values of ND
 
 ## Interpretation
 
-
 # Portugal
 
 ::: {layout-ncol="2"}
@@ -26,7 +27,6 @@ The indicators we calculate are ratios of both the before and after values of ND
 ![](photo/After/2024-09-30-00_00_2024-09-30-23_59_Sentinel-2_L2A_NDVI.jpg)
 
 ![](photo/After/2024-09-29-00_00_2024-09-29-23_59_Sentinel-3_OLCI_L2_Land_OTCI.jpg)
-
 :::
 
 # Greece
@@ -41,8 +41,6 @@ The indicators we calculate are ratios of both the before and after values of ND
 ![](photo/Greece/OTCI_after_Greece.jpg)
 :::
 
-
-
 # Spain
 
 ::: {layout-ncol="2"}
@@ -50,11 +48,7 @@ The indicators we calculate are ratios of both the before and after values of ND
 
 ![](photo/Spain/OTCI_before_Spain.jpg)
 
-
 ![](photo/Spain/NDVI_after_Spain.jpg)
 
 ![](photo/Spain/OTCI_after_Spain.jpg)
-
 :::
-
-

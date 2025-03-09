@@ -1,9 +1,21 @@
----
-title: "About"
+--- 
+format:
+  dashboard:
+    nav-buttons:
+      - icon: github
+        href: https://github.com/
+    theme: united
 ---
 
-About this site
+## Column {width=60%}
 
-```{r}
-1 + 1
+```{python}
+```
+
+## Column {width=40%}
+
+```{python}
+```
+
+```{python}
 ```

@@ -2,22 +2,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Rapid thorough deforestation impact on Chlorophyll average concentration",
+    "title": "Description",
     "section": "",
     "text": "The Normalized Difference Vegetation Index (NDVI) is a measure calculated from Sentinel-2 data. To measure this index, the bands B8 (NIR-near infrared) and B4 (red) are used. It quantifies green vegetation in a selected area. The range for this index is between -1 and 1, where negative 1 represents water and 1 represents extremely dense forests.\nThe Terrestrial Chlorophyll Index (OTCI) is a measure calculated from Sentinel-3 data. This index is used to measure the health of the vegetation in a selected area.\nThe indicators we calculate are ratios of both the before and after values of NDVI and OTCI of an area affected by rapid thorough deforestation. For this, we average the mean values of two weeks prior and post the event and analyse the result afterwards."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html#interpretation",
-    "href": "index.html#interpretation",
-    "title": "Rapid thorough deforestation impact on Chlorophyll average concentration",
-    "section": "",
-    "text": "another lorem ipsum sttements."
   }
 ]

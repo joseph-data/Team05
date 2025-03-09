@@ -6,9 +6,9 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: " "
-      # - href: about.qmd
-      #   text: Title2
+        text: Description
+      - href: about.qmd
+        text: Dashboard
 
 format:
   html:
