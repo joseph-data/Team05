@@ -1,11 +1,12 @@
 ---
 title: "Wild Fires"
-author: "Team 05"
+author: "Team 05 - Örebro University"
 format: html
-theme: solar
+theme: lux
 ---
 
-# We are looking for the percentage change in NDVI and OTCI in areas afted by a wild fire. We are seeing if the percentages are similar or they differ in different ways.
+# We
+are looking for the percentage change in NDVI and OTCI in areas afted by a wild fire. We are seeing if the percentages are similar or they differ in different ways.
 
 lorem ipsum statements about the project.
 
