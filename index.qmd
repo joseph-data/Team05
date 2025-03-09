@@ -1,19 +1,60 @@
 ---
-title: "Wild Fires"
+title: "Rapid thorough deforestation impact on Chlorophyll average concentration"
 author: "Team 05 - Örebro University"
 format: html
 theme: lux
 ---
 
-# We
-are looking for the percentage change in NDVI and OTCI in areas afted by a wild fire. We are seeing if the percentages are similar or they differ in different ways.
+# Description
 
-lorem ipsum statements about the project.
+The Normalized Difference Vegetation Index (NDVI) is a measure calculated from Sentinel-2 data. To measure this index, the bands B8 (NIR-near infrared) and B4 (red) are used. It quantifies green vegetation in a selected area. The range for this index is between -1 and 1, where negative 1 represents water and 1 represents extremely dense forests.
 
-|  |  |  |
-|------------------------|------------------------|------------------------|
-|  | ![](photo/After/2024-09-30-00_00_2024-09-30-23_59_Sentinel-2_L2A_NDVI.jpg) | ![](photo/After/2024-09-29-00_00_2024-09-29-23_59_Sentinel-3_OLCI_L2_Land_OTCI.jpg) |
-|  | ![](photo/b4/2024-09-03-00_00_2024-09-03-23_59_Sentinel-2_L2A_NDVI.jpg) | ![](photo/b4/2024-09-12-00_00_2024-09-12-23_59_Sentinel-3_OLCI_L2_Land_Custom_script.jpg) |
-|  | here is the ratio | another ratio 3 |
+The Terrestrial Chlorophyll Index (OTCI) is a measure calculated from Sentinel-3 data. This index is used to measure the health of the vegetation in a selected area.
 
-another lorem ipsum statements.
+The indicators we calculate are ratios of both the before and after values of NDVI and OTCI of an area affected by rapid thorough deforestation. For this, we average the mean values of two weeks prior and post the event and analyse the result afterwards.
+
+## Interpretation
+
+
+# Portugal
+
+::: {layout-ncol="2"}
+![](photo/b4/2024-09-03-00_00_2024-09-03-23_59_Sentinel-2_L2A_NDVI.jpg)
+
+![](photo/b4/2024-09-12-00_00_2024-09-12-23_59_Sentinel-3_OLCI_L2_Land_Custom_script.jpg)
+
+![](photo/After/2024-09-30-00_00_2024-09-30-23_59_Sentinel-2_L2A_NDVI.jpg)
+
+![](photo/After/2024-09-29-00_00_2024-09-29-23_59_Sentinel-3_OLCI_L2_Land_OTCI.jpg)
+
+:::
+
+# Greece
+
+::: {layout-ncol="2"}
+![](photo/Greece/NDVI_before_Greece.jpg)
+
+![](photo/Greece/OTCI_before_Greece.jpg)
+
+![](photo/Greece/NDVI_after_Greece.jpg)
+
+![](photo/Greece/OTCI_after_Greece.jpg)
+:::
+
+
+
+# Spain
+
+::: {layout-ncol="2"}
+![](photo/Spain/NDVI_before_Spain.jpg)
+
+![](photo/Spain/OTCI_before_Spain.jpg)
+
+
+![](photo/Spain/NDVI_after_Spain.jpg)
+
+![](photo/Spain/OTCI_after_Spain.jpg)
+
+:::
+
+
