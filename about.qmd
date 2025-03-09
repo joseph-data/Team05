@@ -7,10 +7,6 @@ format:
     theme: lux
 ---
 
-```{r}
-library(reticulate)
-```
-
 ```{python}
 #| eval: true
 #| include: false
@@ -155,7 +151,7 @@ display(df)
 library(imager)
 
 # Load the image
-image_path <- "./photo/Portugal/OTCI_before_Portugal.png"
+image_path <- "./photo/portugal_ndvi.png"
 img <- load.image(image_path)
 
 # Set the plot margins
@@ -170,7 +166,7 @@ plot(img, axes = F)
 library(imager)
 
 # Load the image
-image_path <- "./photo/Portugal/OTCI_after_Portugal.jpg"
+image_path <- "./photo/portugal_otci.png"
 img <- load.image(image_path)
 
 # Set the plot margins
