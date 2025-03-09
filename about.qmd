@@ -7,6 +7,11 @@ format:
     theme: lux
 ---
 
+
+```{r}
+library(reticulate)
+```
+
 ```{python}
 #| eval: true
 #| include: false
