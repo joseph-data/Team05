@@ -6,7 +6,7 @@ format:
         href: https://github.com/joseph-data/Team05
     theme: lux
 ---
-```{r setup}
+```{r , message=FALSE, warning=FALSE, include=FALSE}
 #| warning: false
 #| messages: false
 library(reticulate)
@@ -16,7 +16,7 @@ py_install(c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "p
 
 ```
 
-```{python}
+```{python , message=FALSE, warning=FALSE, include=FALSE}
 import io
 import numpy as np
 #import plotly.express as px
@@ -195,18 +195,21 @@ ndvi_data = pd.read_csv("./data/Spain_2022_NDVI.csv")
 # Convert 'C0/date' to a datetime and normalize the time to midnight
 ndvi_data['C0/date'] = pd.to_datetime(ndvi_data['C0/date']).dt.normalize()
 
-# Create the static plot using matplotlib
-plt.figure(figsize=(10, 6))
-plt.plot(ndvi_data['C0/date'], ndvi_data['C0/mean'], marker='o', linestyle='-', color='blue')
-plt.title('NDVI', fontsize=16)
-plt.xlabel('Date', fontsize=14)
-plt.ylabel('NDVI', fontsize=14)
-plt.grid(True)
-plt.xticks(rotation=45)
-plt.tight_layout()
+# Create an interactive line chart using Plotly Express
+fig = px.line(ndvi_data, x='C0/date', y='C0/mean', title='NDVI')
 
-# Display the plot
-plt.show();
+# Update the layout for better aesthetics
+fig.update_layout(
+    title={'text': 'NDVI', 'x': 0.5, 'xanchor': 'center'},
+    xaxis_title='Date',
+    yaxis_title='NDVI',
+    xaxis=dict(tickformat='%Y-%m-%d'),
+    template='plotly_white',
+    margin=dict(l=50, r=50, t=60, b=50)
+)
+
+# Display the interactive plot
+fig.show();
 ```
 
 ```{python}
@@ -216,20 +219,23 @@ plt.show();
 # Read the CSV file
 otci_data = pd.read_csv("./data/Spain_2022_OTCI.csv")
 
-# Convert 'C0/date' to a datetime and normalize time to midnight
+# Convert 'C0/date' to a datetime and normalize the time to midnight
 otci_data['C0/date'] = pd.to_datetime(otci_data['C0/date']).dt.normalize()
 
-# Create the static OTCI plot using matplotlib
-plt.figure(figsize=(10, 6))
-plt.plot(otci_data['C0/date'], otci_data['C0/mean'], marker='o', linestyle='-', color='green')
-plt.title("OTCI", fontsize=16)
-plt.xlabel("Date", fontsize=14)
-plt.ylabel("OTCI", fontsize=14)
-plt.xticks(rotation=45)
-plt.grid(True)
-plt.tight_layout()
+# Create an interactive line chart with Plotly Express
+fig = px.line(otci_data, x='C0/date', y='C0/mean', title='OTCI')
 
-# Display the plot
-plt.show();
+# Update the layout for better aesthetics
+fig.update_layout(
+    title={'text': 'OTCI', 'x': 0.5, 'xanchor': 'center'},
+    xaxis_title='Date',
+    yaxis_title='OTCI',
+    xaxis=dict(tickformat='%Y-%m-%d'),
+    template='plotly_white',
+    margin=dict(l=50, r=50, t=60, b=50)
+)
+
+# Display the interactive plot
+fig.show();
 
 ```

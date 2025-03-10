@@ -7,7 +7,7 @@ format:
     theme: lux
 ---
 
-```{r setup}
+```{r setup , message=FALSE, warning=FALSE, include=FALSE}
 #| warning: false
 #| messages: false
 library(reticulate)
