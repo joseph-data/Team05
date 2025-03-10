@@ -8,7 +8,7 @@
 
 <meta name="author" content="Team 05 - Örebro University">
 
-<title>Team05</title>
+<title>Team 05 Örebro University</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,6 +88,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -80,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Team05</span>
+    <span class="navbar-title">Team 05 Örebro University</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -91,11 +140,19 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Description</span></a>
+<span class="menu-text">Project Description</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Dashboard</span></a>
+<span class="menu-text">Portugal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./greece.html"> 
+<span class="menu-text">Greece</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./spain.html"> 
+<span class="menu-text">Spain</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -113,13 +170,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a>
   <ul class="collapse">
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">INTERPRETATION</a></li>
   </ul></li>
-  <li><a href="#portugal" id="toc-portugal" class="nav-link" data-scroll-target="#portugal">Portugal</a></li>
-  <li><a href="#greece" id="toc-greece" class="nav-link" data-scroll-target="#greece">Greece</a></li>
-  <li><a href="#spain" id="toc-spain" class="nav-link" data-scroll-target="#spain">Spain</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
+  <li><a href="#tools-used" id="toc-tools-used" class="nav-link" data-scroll-target="#tools-used">Tools used:</a></li>
   </ul>
 </nav>
     </div>
@@ -150,91 +207,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Deforestation significantly impacts ecosystem health, reducing vegetation cover and altering chlorophyll levels. The Normalized Difference Vegetation Index (NDVI) and Terrestrial Chlorophyll Index (OTCI) provide valuable insights into these changes by measuring vegetation density and chlorophyll content, respectively. While NDVI has been used to assess vegetation loss, OTCI offers a complementary perspective on thel state of remaining plant life. This study aims to correlate NDVI and OTCI in deforested areas, exploring how vegetation loss influences chlorophyll dynamics and evaluating the potential of OTCI as an additional indicator of forest degradation.</p>
+</section>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>The Normalized Difference Vegetation Index (NDVI) was introduced in the early 1970s by Rouse et al.&nbsp;(1973), who presented it as a tool for monitoring vegetation in early satellite missions. A similar concept had been proposed earlier by Kriegler et al.&nbsp;(1969), but NDVI became the most widely adopted and remains in use today. NDVI quantifies vegetation health and density by comparing the reflectance of near-infrared and red light. These observations and images are publicly accessible through the Copernicus Browser using Sentinel-2 data <span class="citation" data-cites="rouse1974">(<a href="#ref-rouse1974" role="doc-biblioref">Rouse et al. 1974</a>)</span>.</p>
+<p>The Terrestrial Chlorophyll Index (OTCI) was introduced in 2020 as a continuation of the chlorophyll monitoring capabilities of the Medium Resolution Imaging Spectrometer (MERIS), utilizing Sentinel-3 data. It estimates chlorophyll content by analyzing red reflectance characteristics of a specific area. It is important to note that some OTCI images obtained from Sentinel-3 sometimes have missing pixels, which means that the chlorophyll concentration does not meet the threshold value to be captured and exhibited in the image <span class="citation" data-cites="pastor-guzman2020">(<a href="#ref-pastor-guzman2020" role="doc-biblioref">Pastor-Guzman et al. 2020</a>)</span>.</p>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">INTERPRETATION</h2>
+<p>NDVI ratio The NDVI ratio measures, in this case, the extent of an impacted area that has burned. A low NDVI ratio indicates that a significant portion of the forest has burned down. It can take any real number as a possible value, but if it exceeds 1, it suggests forest growth. Therefore, when analyzing forest fires, the NDVI ratio should never be greater than 1. In some cases, the NDVI ratio can be negative, particularly when applied to water bodies, as NDVI values for water are typically negative. However, negative values are rare when applied to land.</p>
+<p><span class="math display">\[
+\text{NDVI Ratio}= \frac{\text{NDVI After}}{\text{NDVI Before}}
+\]</span></p>
+<p>OTCI ratio The OTCI ratio measures the change in average chlorophyll content detected by OTCI between two time points. It can take any positive value, though in practice, it rarely exceeds 10, except in cases where the initial area had an extremely low chlorophyll output that could still be detected by Sentinel-3. A ratio of 1 means that the forest, after the analyzed event, has the same average chlorophyll output as it did in the previous time period (measured over two weeks before and after the event). An OTCI ratio lower than 1 indicates a decrease in the forest’s average chlorophyll output. In the case of a forest fire, this suggests that either: the fire primarily burned the healthiest parts of the forest, or the fire damaged the chlorophyll output but did not fully destroy all affected areas.</p>
+<p><span class="math display">\[
+\text{OTCI Ratio}= \frac{\text{OTCI After}}{\text{OTCI Before}}
+\]</span></p>
+</section>
+</section>
 <section id="description" class="level1">
 <h1>Description</h1>
 <p>The Normalized Difference Vegetation Index (NDVI) is a measure calculated from Sentinel-2 data. To measure this index, the bands B8 (NIR-near infrared) and B4 (red) are used. It quantifies green vegetation in a selected area. The range for this index is between -1 and 1, where negative 1 represents water and 1 represents extremely dense forests.</p>
 <p>The Terrestrial Chlorophyll Index (OTCI) is a measure calculated from Sentinel-3 data. This index is used to measure the health of the vegetation in a selected area.</p>
 <p>The indicators we calculate are ratios of both the before and after values of NDVI and OTCI of an area affected by rapid thorough deforestation. For this, we average the mean values of two weeks prior and post the event and analyse the result afterwards.</p>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
 </section>
-</section>
-<section id="portugal" class="level1">
-<h1>Portugal</h1>
-<div>
+<section id="tools-used" class="level1">
+<h1>Tools used:</h1>
+<p>Python</p>
+<p>Copernicus browser</p>
 
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/b4/2024-09-03-00_00_2024-09-03-23_59_Sentinel-2_L2A_NDVI.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/b4/2024-09-12-00_00_2024-09-12-23_59_Sentinel-3_OLCI_L2_Land_Custom_script.jpg" class="img-fluid"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/After/2024-09-30-00_00_2024-09-30-23_59_Sentinel-2_L2A_NDVI.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/After/2024-09-29-00_00_2024-09-29-23_59_Sentinel-3_OLCI_L2_Land_OTCI.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="greece" class="level1">
-<h1>Greece</h1>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Greece/NDVI_before_Greece.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Greece/OTCI_before_Greece.jpg" class="img-fluid"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Greece/NDVI_after_Greece.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Greece/OTCI_after_Greece.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="spain" class="level1">
-<h1>Spain</h1>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Spain/NDVI_before_Spain.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Spain/OTCI_before_Spain.jpg" class="img-fluid"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Spain/NDVI_after_Spain.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="photo/Spain/OTCI_after_Spain.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-pastor-guzman2020" class="csl-entry" role="listitem">
+Pastor-Guzman, J., L. Brown, H. Morris, L. Bourg, P. Goryl, S. Dransfeld, and J. Dash. 2020. <span>“The Sentinel-3 OLCI Terrestrial Chlorophyll Index (OTCI): Algorithm Improvements, Spatiotemporal Consistency and Continuity with the MERIS Archive.”</span> <em>Remote Sensing</em> 12 (16): 2652. <a href="https://doi.org/10.3390/rs12162652">https://doi.org/10.3390/rs12162652</a>.
+</div>
+<div id="ref-rouse1974" class="csl-entry" role="listitem">
+Rouse, J. W., R. H. Haas, J. A. Schell, and D. W. Deering. 1974. <span>“Monitoring Vegetation Systems in the Great Plains with ERTS.”</span> In. <a href="https://ntrs.nasa.gov/citations/19740022614">https://ntrs.nasa.gov/citations/19740022614</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
