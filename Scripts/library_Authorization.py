@@ -1,4 +1,5 @@
 ## Import required libraries
+pip install requests
 import requests
 import io
 import numpy as np

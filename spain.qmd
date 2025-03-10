@@ -64,6 +64,19 @@ dict(
 )
 ```
 
+#### Row
+
+```{python}
+#| content: valuebox
+#| title: "Fire start date"
+#| color: primary
+value = "18/08/2022"
+
+dict(
+  value = value
+)
+```
+
 ### Column
 
 #### Row {height="80%"}

@@ -59,6 +59,18 @@ dict(
   value = formatted_value
 )
 ```
+#### Row
+
+```{python}
+#| content: valuebox
+#| title: "Fire start date"
+#| color: primary
+value = "16/09/2024"
+
+dict(
+  value = value
+)
+```
 
 ### Column
 
