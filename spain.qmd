@@ -7,6 +7,9 @@ format:
     theme: lux
 ---
 ```{r setup}
+#| warning: false
+#| messages: false
+library(reticulate)
 library(reticulate)
 py_install(c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "pandas", "plotly", "ipython"), pip = TRUE)
 

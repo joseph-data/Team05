@@ -8,6 +8,8 @@ format:
 ---
 
 ```{r setup}
+#| warning: false
+#| messages: false
 library(reticulate)
 py_install(c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "pandas", "plotly", "ipython"), pip = TRUE)
 
@@ -220,47 +222,48 @@ ndvi_data = pd.read_csv("./data/Portugal_2024_NDVI.csv")
 # Convert 'C0/date' to a datetime and normalize the time to midnight
 ndvi_data['C0/date'] = pd.to_datetime(ndvi_data['C0/date']).dt.normalize()
 
-# Create the static plot using matplotlib
-plt.figure(figsize=(10, 6))
-line_objects=plt.plot(ndvi_data['C0/date'], ndvi_data['C0/mean'], marker='o', linestyle='-', color='blue')
-plt.title('NDVI', fontsize=16)
-plt.xlabel('Date', fontsize=14)
-plt.ylabel('NDVI', fontsize=14)
-plt.grid(True)
-plt.xticks(rotation=45)
-plt.tight_layout()
+# Create an interactive line chart using Plotly Express
+fig = px.line(ndvi_data, x='C0/date', y='C0/mean', title='NDVI')
 
-# Display the plot
-plt.show();
-None 
+# Update the layout for better aesthetics
+fig.update_layout(
+    title={'text': 'NDVI', 'x': 0.5, 'xanchor': 'center'},
+    xaxis_title='Date',
+    yaxis_title='NDVI',
+    xaxis=dict(tickformat='%Y-%m-%d'),
+    template='plotly_white',
+    margin=dict(l=50, r=50, t=60, b=50)
+)
+
+# Display the interactive plot
+fig.show();
+
 ```
 
 ```{python}
-#| title: "NDVI graph"
+#| title: "OTCI graph"
 
-import pandas as pd
-import matplotlib.pyplot as plt
+# Read the CSV file into otci_data
+otci_data = pd.read_csv("./data/Portugal_2024_OTCI.csv")
 
-# Read the CSV file
-ndvi_data = pd.read_csv("./data/Portugal_2024_NDVI.csv")
+# Convert 'C0/date' to a datetime and normalize the time to midnight
+otci_data['C0/date'] = pd.to_datetime(otci_data['C0/date']).dt.normalize()
 
-# Convert 'C0/date' to a datetime and normalize time to midnight
-ndvi_data['C0/date'] = pd.to_datetime(ndvi_data['C0/date']).dt.normalize()
+# Create an interactive line chart with Plotly Express
+fig = px.line(otci_data, x='C0/date', y='C0/mean', title='OTCI')
 
-# Create the static plot using matplotlib
-plt.figure(figsize=(10, 6))
-# Suppress the output by adding a semicolon at the end:
-line_objects = plt.plot(ndvi_data['C0/date'], ndvi_data['C0/mean'], marker='o', linestyle='-', color='blue');  
+# Update the layout for better aesthetics
+fig.update_layout(
+    title={'text': 'OTCI', 'x': 0.5, 'xanchor': 'center'},
+    xaxis_title='Date',
+    yaxis_title='OTCI',
+    xaxis=dict(tickformat='%Y-%m-%d'),
+    template='plotly_white',
+    margin=dict(l=50, r=50, t=60, b=50)
+)
 
-plt.title('NDVI', fontsize=16)
-plt.xlabel('Date', fontsize=14)
-plt.ylabel('NDVI', fontsize=14)
-plt.grid(True)
-plt.xticks(rotation=45)
-plt.tight_layout()
+# Display the interactive plot
+fig.show();
 
-# Display the plot
-plt.show();
-None 
 
 ```
