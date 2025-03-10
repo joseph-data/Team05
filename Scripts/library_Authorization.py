@@ -1,5 +1,5 @@
 ## Import required libraries
-import requests
+#import requests
 import io
 import numpy as np
 import plotly.express as px
