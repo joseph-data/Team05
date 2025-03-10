@@ -7,9 +7,6 @@ format:
     theme: lux
 ---
 
-```{r}
-library(reticulate)
-```
 
 ```{python}
 #| eval: true
@@ -170,96 +167,47 @@ plot(img, axes = F)
 
 ```{python}
 #| title: "NDVI graph"
-Albergaria_2024_NDVI = pd.read_csv("./data/Greece_2024_NDVI.csv")
+# Read the CSV file
+ndvi_data = pd.read_csv("./data/Greece_2024_NDVI.csv")
 
-Spain_2022_NDVI = Albergaria_2024_NDVI
+# Convert 'C0/date' to a datetime and normalize the time to midnight
+ndvi_data['C0/date'] = pd.to_datetime(ndvi_data['C0/date']).dt.normalize()
 
-# 1. Convert 'C0/date' to a datetime and normalize time to midnight
-Spain_2022_NDVI['C0/date'] = pd.to_datetime(Spain_2022_NDVI['C0/date'])
-Spain_2022_NDVI['C0/date'] = Spain_2022_NDVI['C0/date'].dt.normalize()
+# Create the static plot using matplotlib
+plt.figure(figsize=(10, 6))
+plt.plot(ndvi_data['C0/date'], ndvi_data['C0/mean'], marker='o', linestyle='-', color='blue')
+plt.title('NDVI', fontsize=16)
+plt.xlabel('Date', fontsize=14)
+plt.ylabel('NDVI', fontsize=14)
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
 
-# 2. Create an interactive line chart with Plotly
-fig = px.line(
-    Spain_2022_NDVI, 
-    x='C0/date',            # x-axis from the 'C0/date' column
-    y='C0/mean',            # y-axis from the 'C0/mean' column
-    title='NDVI'
-)
-
-# 3. Adjust layout
-fig.update_layout(
-    # Center the title
-    title={
-        'text': 'NDVI',   # You can change this text or remove it if you already have the title in px.line()
-        'x': 0.5,         # 0.0 = left, 0.5 = center, 1.0 = right
-        'xanchor': 'center'
-    },
-    # Axis labels
-    xaxis_title='Date',
-    yaxis_title='NDVI',
-    
-    # Format the x-axis
-    xaxis=dict(
-        tickformat='%Y-%m-%d'
-    ),
-    
-    # Add a clean white background
-    template='plotly_white',
-    
-    # Adjust plot margins (optional)
-    margin=dict(l=50, r=50, t=60, b=50),
-    
-    # Customize font (optional)
-    font=dict(
-        size=14,        # Font size
-        family='Arial'  # Font family
-    )
-)
-
-# 4. Show the interactive figure
-#fig.show();
+# Display the plot
+plt.show();
 
 ```
 
 ```{python}
-#| title: "OTCI Graph"
-Albergaria_2024_OTCI = pd.read_csv("./data/Greece_2024_OTCI.csv")
+#| title: "OTCI graph"
+# Read the CSV file
+otci_data = pd.read_csv("./data/Greece_2024_OTCI.csv")
 
-Spain_2022_OTCI = Albergaria_2024_OTCI
+# Convert 'C0/date' to a datetime and normalize time to midnight
+otci_data['C0/date'] = pd.to_datetime(otci_data['C0/date']).dt.normalize()
 
-# 1. Convert 'C0/date' to a datetime and normalize time to midnight
-Spain_2022_OTCI['C0/date'] = pd.to_datetime(Spain_2022_OTCI['C0/date'])
-Spain_2022_OTCI['C0/date'] = Spain_2022_OTCI['C0/date'].dt.normalize()
+# Create the static OTCI plot using matplotlib
+plt.figure(figsize=(10, 6))
+plt.plot(otci_data['C0/date'], otci_data['C0/mean'], marker='o', linestyle='-', color='green')
+plt.title("OTCI", fontsize=16)
+plt.xlabel("Date", fontsize=14)
+plt.ylabel("OTCI", fontsize=14)
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
 
-# 2. Create an interactive line chart with Plotly
-fig = px.line(
-    Spain_2022_OTCI, 
-    x='C0/date',            # x-axis from the 'C0/date' column
-    y='C0/mean',            # y-axis from the 'C0/mean' column
-    title='OTCI'
-)
+# Display the plot
+plt.show();
 
-# 3. Adjust layout to center the title and improve overall design
-fig.update_layout(
-    title={
-        'text': 'OTCI',
-        'x': 0.5,            # Center the title (0.0=left, 0.5=center, 1.0=right)
-        'xanchor': 'center'
-    },
-    xaxis_title='Date',
-    yaxis_title='OTCI',
-    xaxis=dict(
-        tickformat='%Y-%m-%d'
-    ),
-    template='plotly_white',         # Clean white background
-    margin=dict(l=50, r=50, t=60, b=50),  # Adjust margins for better spacing
-    font=dict(
-        size=14,
-        family='Arial'
-    )
-)
-
-# 4. Show the interactive figure
-#fig.show()
 
 ```

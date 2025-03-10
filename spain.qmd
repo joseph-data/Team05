@@ -171,96 +171,13 @@ plot(img, axes = F)
 
 ```{python}
 #| title: "NDVI graph"
-Albergaria_2024_NDVI = pd.read_csv("./data/Spain_2022_NDVI.csv")
+#Albergaria_2024_NDVI = pd.read_csv("./data/Spain_2022_NDVI.csv")
 
-Spain_2022_NDVI = Albergaria_2024_NDVI
-
-# 1. Convert 'C0/date' to a datetime and normalize time to midnight
-Spain_2022_NDVI['C0/date'] = pd.to_datetime(Spain_2022_NDVI['C0/date'])
-Spain_2022_NDVI['C0/date'] = Spain_2022_NDVI['C0/date'].dt.normalize()
-
-# 2. Create an interactive line chart with Plotly
-fig = px.line(
-    Spain_2022_NDVI, 
-    x='C0/date',            # x-axis from the 'C0/date' column
-    y='C0/mean',            # y-axis from the 'C0/mean' column
-    title='NDVI'
-)
-
-# 3. Adjust layout
-fig.update_layout(
-    # Center the title
-    title={
-        'text': 'NDVI',   # You can change this text or remove it if you already have the title in px.line()
-        'x': 0.5,         # 0.0 = left, 0.5 = center, 1.0 = right
-        'xanchor': 'center'
-    },
-    # Axis labels
-    xaxis_title='Date',
-    yaxis_title='NDVI',
-    
-    # Format the x-axis
-    xaxis=dict(
-        tickformat='%Y-%m-%d'
-    ),
-    
-    # Add a clean white background
-    template='plotly_white',
-    
-    # Adjust plot margins (optional)
-    margin=dict(l=50, r=50, t=60, b=50),
-    
-    # Customize font (optional)
-    font=dict(
-        size=14,        # Font size
-        family='Arial'  # Font family
-    )
-)
-
-# 4. Show the interactive figure
-#fig.show();
 
 ```
 
 ```{python}
 #| title: "OTCI Graph"
-Albergaria_2024_OTCI = pd.read_csv("./data/Spain_2022_OTCI.csv")
-
-Spain_2022_OTCI = Albergaria_2024_OTCI
-
-# 1. Convert 'C0/date' to a datetime and normalize time to midnight
-Spain_2022_OTCI['C0/date'] = pd.to_datetime(Spain_2022_OTCI['C0/date'])
-Spain_2022_OTCI['C0/date'] = Spain_2022_OTCI['C0/date'].dt.normalize()
-
-# 2. Create an interactive line chart with Plotly
-fig = px.line(
-    Spain_2022_OTCI, 
-    x='C0/date',            # x-axis from the 'C0/date' column
-    y='C0/mean',            # y-axis from the 'C0/mean' column
-    title='OTCI'
-)
-
-# 3. Adjust layout to center the title and improve overall design
-fig.update_layout(
-    title={
-        'text': 'OTCI',
-        'x': 0.5,            # Center the title (0.0=left, 0.5=center, 1.0=right)
-        'xanchor': 'center'
-    },
-    xaxis_title='Date',
-    yaxis_title='OTCI',
-    xaxis=dict(
-        tickformat='%Y-%m-%d'
-    ),
-    template='plotly_white',         # Clean white background
-    margin=dict(l=50, r=50, t=60, b=50),  # Adjust margins for better spacing
-    font=dict(
-        size=14,
-        family='Arial'
-    )
-)
-
-# 4. Show the interactive figure
-#fig.show()
+#Albergaria_2024_OTCI = pd.read_csv("./data/Spain_2022_OTCI.csv")
 
 ```

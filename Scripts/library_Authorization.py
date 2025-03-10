@@ -2,8 +2,8 @@
 #import requests
 import io
 import numpy as np
-import plotly.express as px
-import plotly.graph_objects as go
+#import plotly.express as px
+#import plotly.graph_objects as go
 from PIL import Image
 
 import geopandas as gpd
@@ -12,6 +12,7 @@ import fiona
 
 from IPython.display import display
 
+import matplotlib.pyplot as plt
 
 import pandas as pd
 import plotly.express as px
