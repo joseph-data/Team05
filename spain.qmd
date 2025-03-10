@@ -6,17 +6,16 @@ format:
         href: https://github.com/joseph-data/Team05
     theme: lux
 ---
-```{r , message=FALSE, warning=FALSE, include=FALSE}
-#| warning: false
-#| messages: false
-library(reticulate)
-library(reticulate)
-py_install(c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "pandas", "plotly", "ipython"), pip = TRUE)
 
-
+```{r install-python-libs, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(reticulate)
+py_install(
+  c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "pandas", "plotly", "ipython"), 
+  pip = TRUE
+)
 ```
 
-```{python , message=FALSE, warning=FALSE, include=FALSE}
+```{python , message=FALSE, warning=FALSE, include=FALSE, results = 'hide'}
 import io
 import numpy as np
 #import plotly.express as px

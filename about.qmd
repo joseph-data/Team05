@@ -7,17 +7,16 @@ format:
     theme: lux
 ---
 
-```{r setup , message=FALSE, warning=FALSE, include=FALSE}
-#| warning: false
-#| messages: false
+
+```{r install-python-libs, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
 library(reticulate)
-py_install(c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "pandas", "plotly", "ipython"), pip = TRUE)
-
-
-
+py_install(
+  c("pillow", "numpy", "geopandas", "folium", "fiona", "matplotlib", "pandas", "plotly", "ipython"), 
+  pip = TRUE
+)
 ```
 
-```{python}
+```{python , message=FALSE, warning=FALSE, include=FALSE, results = 'hide'}
 import io
 import numpy as np
 #import plotly.express as px
