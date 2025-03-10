@@ -14,9 +14,9 @@ Deforestation significantly impacts ecosystem health, reducing vegetation cover 
 
 # Background
 
-The Normalized Difference Vegetation Index (NDVI) was introduced in the early 1970s by Rouse et al. (1973), who presented it as a tool for monitoring vegetation in early satellite missions. A similar concept had been proposed earlier by Kriegler et al. (1969), but NDVI became the most widely adopted and remains in use today. NDVI quantifies vegetation health and density by comparing the reflectance of near-infrared and red light. These observations and images are publicly accessible through the Copernicus Browser using Sentinel-2 data. Reference: https://ntrs.nasa.gov/citations/19740022614
+The Normalized Difference Vegetation Index (NDVI) was introduced in the early 1970s by Rouse et al. (1973), who presented it as a tool for monitoring vegetation in early satellite missions. A similar concept had been proposed earlier by Kriegler et al. (1969), but NDVI became the most widely adopted and remains in use today. NDVI quantifies vegetation health and density by comparing the reflectance of near-infrared and red light. These observations and images are publicly accessible through the Copernicus Browser using Sentinel-2 data [@rouse1974].
 
-The Terrestrial Chlorophyll Index (OTCI) was introduced in 2020 as a continuation of the chlorophyll monitoring capabilities of the Medium Resolution Imaging Spectrometer (MERIS), utilizing Sentinel-3 data. It estimates chlorophyll content by analyzing red reflectance characteristics of a specific area. It is important to note that some OTCI images obtained from Sentinel-3 sometimes have missing pixels, which means that the chlorophyll concentration does not meet the threshold value to be captured and exhibited in the image. Reference: https://www.researchgate.net/publication/343697120_The_Sentinel-3_OLCI_Terrestrial_Chlorophyll_Index_OTCI_Algorithm_Improvements_Spatiotemporal_Consistency_and_Continuity_with_the_MERIS_Archive [@pastor-guzman2020]
+The Terrestrial Chlorophyll Index (OTCI) was introduced in 2020 as a continuation of the chlorophyll monitoring capabilities of the Medium Resolution Imaging Spectrometer (MERIS), utilizing Sentinel-3 data. It estimates chlorophyll content by analyzing red reflectance characteristics of a specific area. It is important to note that some OTCI images obtained from Sentinel-3 sometimes have missing pixels, which means that the chlorophyll concentration does not meet the threshold value to be captured and exhibited in the image [@pastor-guzman2020].
 
 ## INTERPRETATION
 
@@ -39,3 +39,9 @@ The Normalized Difference Vegetation Index (NDVI) is a measure calculated from S
 The Terrestrial Chlorophyll Index (OTCI) is a measure calculated from Sentinel-3 data. This index is used to measure the health of the vegetation in a selected area.
 
 The indicators we calculate are ratios of both the before and after values of NDVI and OTCI of an area affected by rapid thorough deforestation. For this, we average the mean values of two weeks prior and post the event and analyse the result afterwards.
+
+# Tools used:
+
+Python
+
+Copernicus browser

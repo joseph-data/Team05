@@ -176,6 +176,7 @@ window.Quarto = {
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">INTERPRETATION</a></li>
   </ul></li>
   <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
+  <li><a href="#tools-used" id="toc-tools-used" class="nav-link" data-scroll-target="#tools-used">Tools used:</a></li>
   </ul>
 </nav>
     </div>
@@ -212,8 +213,8 @@ window.Quarto = {
 </section>
 <section id="background" class="level1">
 <h1>Background</h1>
-<p>The Normalized Difference Vegetation Index (NDVI) was introduced in the early 1970s by Rouse et al.&nbsp;(1973), who presented it as a tool for monitoring vegetation in early satellite missions. A similar concept had been proposed earlier by Kriegler et al.&nbsp;(1969), but NDVI became the most widely adopted and remains in use today. NDVI quantifies vegetation health and density by comparing the reflectance of near-infrared and red light. These observations and images are publicly accessible through the Copernicus Browser using Sentinel-2 data. Reference: https://ntrs.nasa.gov/citations/19740022614</p>
-<p>The Terrestrial Chlorophyll Index (OTCI) was introduced in 2020 as a continuation of the chlorophyll monitoring capabilities of the Medium Resolution Imaging Spectrometer (MERIS), utilizing Sentinel-3 data. It estimates chlorophyll content by analyzing red reflectance characteristics of a specific area. It is important to note that some OTCI images obtained from Sentinel-3 sometimes have missing pixels, which means that the chlorophyll concentration does not meet the threshold value to be captured and exhibited in the image. Reference: https://www.researchgate.net/publication/343697120_The_Sentinel-3_OLCI_Terrestrial_Chlorophyll_Index_OTCI_Algorithm_Improvements_Spatiotemporal_Consistency_and_Continuity_with_the_MERIS_Archive <span class="citation" data-cites="pastor-guzman2020">(<a href="#ref-pastor-guzman2020" role="doc-biblioref">Pastor-Guzman et al. 2020</a>)</span></p>
+<p>The Normalized Difference Vegetation Index (NDVI) was introduced in the early 1970s by Rouse et al.&nbsp;(1973), who presented it as a tool for monitoring vegetation in early satellite missions. A similar concept had been proposed earlier by Kriegler et al.&nbsp;(1969), but NDVI became the most widely adopted and remains in use today. NDVI quantifies vegetation health and density by comparing the reflectance of near-infrared and red light. These observations and images are publicly accessible through the Copernicus Browser using Sentinel-2 data <span class="citation" data-cites="rouse1974">(<a href="#ref-rouse1974" role="doc-biblioref">Rouse et al. 1974</a>)</span>.</p>
+<p>The Terrestrial Chlorophyll Index (OTCI) was introduced in 2020 as a continuation of the chlorophyll monitoring capabilities of the Medium Resolution Imaging Spectrometer (MERIS), utilizing Sentinel-3 data. It estimates chlorophyll content by analyzing red reflectance characteristics of a specific area. It is important to note that some OTCI images obtained from Sentinel-3 sometimes have missing pixels, which means that the chlorophyll concentration does not meet the threshold value to be captured and exhibited in the image <span class="citation" data-cites="pastor-guzman2020">(<a href="#ref-pastor-guzman2020" role="doc-biblioref">Pastor-Guzman et al. 2020</a>)</span>.</p>
 <section id="interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="interpretation">INTERPRETATION</h2>
 <p>NDVI ratio The NDVI ratio measures, in this case, the extent of an impacted area that has burned. A low NDVI ratio indicates that a significant portion of the forest has burned down. It can take any real number as a possible value, but if it exceeds 1, it suggests forest growth. Therefore, when analyzing forest fires, the NDVI ratio should never be greater than 1. In some cases, the NDVI ratio can be negative, particularly when applied to water bodies, as NDVI values for water are typically negative. However, negative values are rare when applied to land.</p>
@@ -231,6 +232,11 @@ window.Quarto = {
 <p>The Normalized Difference Vegetation Index (NDVI) is a measure calculated from Sentinel-2 data. To measure this index, the bands B8 (NIR-near infrared) and B4 (red) are used. It quantifies green vegetation in a selected area. The range for this index is between -1 and 1, where negative 1 represents water and 1 represents extremely dense forests.</p>
 <p>The Terrestrial Chlorophyll Index (OTCI) is a measure calculated from Sentinel-3 data. This index is used to measure the health of the vegetation in a selected area.</p>
 <p>The indicators we calculate are ratios of both the before and after values of NDVI and OTCI of an area affected by rapid thorough deforestation. For this, we average the mean values of two weeks prior and post the event and analyse the result afterwards.</p>
+</section>
+<section id="tools-used" class="level1">
+<h1>Tools used:</h1>
+<p>Python</p>
+<p>Copernicus browser</p>
 
 
 
@@ -239,6 +245,9 @@ window.Quarto = {
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-pastor-guzman2020" class="csl-entry" role="listitem">
 Pastor-Guzman, J., L. Brown, H. Morris, L. Bourg, P. Goryl, S. Dransfeld, and J. Dash. 2020. <span>“The Sentinel-3 OLCI Terrestrial Chlorophyll Index (OTCI): Algorithm Improvements, Spatiotemporal Consistency and Continuity with the MERIS Archive.”</span> <em>Remote Sensing</em> 12 (16): 2652. <a href="https://doi.org/10.3390/rs12162652">https://doi.org/10.3390/rs12162652</a>.
+</div>
+<div id="ref-rouse1974" class="csl-entry" role="listitem">
+Rouse, J. W., R. H. Haas, J. A. Schell, and D. W. Deering. 1974. <span>“Monitoring Vegetation Systems in the Great Plains with ERTS.”</span> In. <a href="https://ntrs.nasa.gov/citations/19740022614">https://ntrs.nasa.gov/citations/19740022614</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
