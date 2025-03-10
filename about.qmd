@@ -14,10 +14,22 @@ py_install("pillow", pip = TRUE)
 ```
 
 ```{python}
-#| eval: true
-#| include: false
-with open("./Scripts/library_Authorization.py", encoding="utf-8") as f:
-    exec(f.read())
+import io
+import numpy as np
+#import plotly.express as px
+#import plotly.graph_objects as go
+from PIL import Image
+
+import geopandas as gpd
+import folium
+import fiona
+
+from IPython.display import display
+
+import matplotlib.pyplot as plt
+
+import pandas as pd
+import plotly.express as px
 ```
 
 ## Row
@@ -222,25 +234,31 @@ None
 ```
 
 ```{python}
-#| title: "OTCI Graph"
+#| title: "NDVI graph"
+
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # Read the CSV file
-otci_data = pd.read_csv("./data/Portugal_2024_OTCI.csv")
+ndvi_data = pd.read_csv("./data/Portugal_2024_NDVI.csv")
 
 # Convert 'C0/date' to a datetime and normalize time to midnight
-otci_data['C0/date'] = pd.to_datetime(otci_data['C0/date']).dt.normalize()
+ndvi_data['C0/date'] = pd.to_datetime(ndvi_data['C0/date']).dt.normalize()
 
-# Create the static OTCI plot using matplotlib
+# Create the static plot using matplotlib
 plt.figure(figsize=(10, 6))
-line_objects=plt.plot(otci_data['C0/date'], otci_data['C0/mean'], marker='o', linestyle='-', color='green')
-plt.title("OTCI", fontsize=16)
-plt.xlabel("Date", fontsize=14)
-plt.ylabel("OTCI", fontsize=14)
-plt.xticks(rotation=45)
+# Suppress the output by adding a semicolon at the end:
+line_objects = plt.plot(ndvi_data['C0/date'], ndvi_data['C0/mean'], marker='o', linestyle='-', color='blue');  
+
+plt.title('NDVI', fontsize=16)
+plt.xlabel('Date', fontsize=14)
+plt.ylabel('NDVI', fontsize=14)
 plt.grid(True)
+plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Display the plot
 plt.show();
 None 
+
 ```
