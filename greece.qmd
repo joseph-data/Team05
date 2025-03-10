@@ -7,6 +7,11 @@ format:
     theme: lux
 ---
 
+```{r setup}
+library(reticulate)
+py_install("pillow", pip = TRUE)
+
+```
 
 ```{python}
 #| eval: true

@@ -7,6 +7,12 @@ format:
     theme: lux
 ---
 
+```{r setup}
+library(reticulate)
+py_install("pillow", pip = TRUE)
+
+```
+
 ```{python}
 #| eval: true
 #| include: false
@@ -194,14 +200,47 @@ plot(img, axes = F)
 
 #Spain_2022_NDVI = Albergaria_2024_NDVI
 
+# Read the CSV file
+ndvi_data = pd.read_csv("./data/Portugal_2024_NDVI.csv")
+
+# Convert 'C0/date' to a datetime and normalize the time to midnight
+ndvi_data['C0/date'] = pd.to_datetime(ndvi_data['C0/date']).dt.normalize()
+
+# Create the static plot using matplotlib
+plt.figure(figsize=(10, 6))
+line_objects=plt.plot(ndvi_data['C0/date'], ndvi_data['C0/mean'], marker='o', linestyle='-', color='blue')
+plt.title('NDVI', fontsize=16)
+plt.xlabel('Date', fontsize=14)
+plt.ylabel('NDVI', fontsize=14)
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Display the plot
+plt.show();
+None 
 ```
 
 ```{python}
 #| title: "OTCI Graph"
-#Albergaria_2024_OTCI = pd.read_csv("./data/Portugal_2024_OTCI.csv")
 
-#Spain_2022_OTCI = Albergaria_2024_OTCI
+# Read the CSV file
+otci_data = pd.read_csv("./data/Portugal_2024_OTCI.csv")
 
+# Convert 'C0/date' to a datetime and normalize time to midnight
+otci_data['C0/date'] = pd.to_datetime(otci_data['C0/date']).dt.normalize()
 
+# Create the static OTCI plot using matplotlib
+plt.figure(figsize=(10, 6))
+line_objects=plt.plot(otci_data['C0/date'], otci_data['C0/mean'], marker='o', linestyle='-', color='green')
+plt.title("OTCI", fontsize=16)
+plt.xlabel("Date", fontsize=14)
+plt.ylabel("OTCI", fontsize=14)
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
 
+# Display the plot
+plt.show();
+None 
 ```
